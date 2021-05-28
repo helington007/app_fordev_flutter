@@ -1,0 +1,223 @@
+Curso de Flutter
+    https://www.udemy.com/course/flutter-com-mango/
+
+Setting JSON
+    C:\Users\user\AppData\Roaming\Code\User\settings.json
+
+GIT BASH COMMANDS - PERSONAL CONFIGURATION
+
+    todos os comandos configurados...
+
+        Configurar atalhos para alguns comandos utilizados com frequencias
+
+            Editando no VI
+            
+                $ git config --global --edit
+                
+            Editando no terminal do proprio VSCODE
+                Editando no VSCode
+            
+                    $ git config --global core.editor code
+                    
+            Editando manualmente pelo diretório onde fica localizado o arquivo "C:\Users\user\.gitconfig"
+                
+                    
+            Deixar assim...
+                            
+                [user]
+                    name = MyNameComplete
+                    email = email@email.com
+                    password = ******
+                [core]
+                    editor = code --wait
+                [alias]
+                    a = !git add --all # a => Adiciona todos os arquivos ao para um novo commit
+                    b = !git branch -M main # b => Criando um novo branch
+                    c = !git add --all && git commit -m # c => Adiciona todos os arquivos e commita de uma só vez
+                    i = !git init #  => Iniciando o git dentro do diretório
+                    l = !git log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(cyan)%cn, %C(green)%cr' # s => Apresenta um log perrsonalizado com cores e formatos padronizados por mim mesmo [%h => HASH REDUZIDA | %H => HASH COMPLETA], [%d => BRANT], [%s => ASSUNTO], [%cn => NOME DE QUEM FEZ O COMMIT], [%cr => DATA RELATIVA DO COMMIT], [%C(blue) => COR]
+                    p = !git push -u origin main # p => Enviando os arquivos para o GitHub ropriamente dito
+                    r = !git remote add origin # r => Permite acesso remoto ao Git com o diretório principal
+                    s = !git status -s # s => Apresenta o status de forma mais resumida usando um tipo de SHORT
+                    t = !sh -c 'git tag -a $1 -m $1' - # t => tag Anotada => Cria uma TAG Anotada diretamente no nosso repositório
+                    amend = !git add --all && git commit --amend --no-edit # amend => Junta o comite atual ao commit anterior, usar issso quando acontecer de eu esquecer de alguma informação importante no commit que já foi feito, --no-edit => Significa que não precisa alterar o comit anterior, basta juntar os dois
+                    count = !git shortlog -s --grep # Contagem de forma mais resumida usando um tipo de SHORT, retornando todas as ocorrencias de uma determinada STRING, é só inserir a STRING que deseja procurar
+                [push]
+                    followTags = true # followtags => Forçando o envio de todas as minhas TAGS ANOTADAS para o GitHub, por padrão ele não envia as tags
+
+VSCODE COMMANDS
+    CTRL + .            => import automático
+    CTRL + SHIFT + P    => command palet
+    CTRL + SHIFT + F5   => reiniciar o app
+    CTRL + F5           => auto reload app
+
+Create app
+    $ flutter create --org br.com.razonsocial app_name_flutter
+
+Emulator Android
+    CTRL + SHIFT + P
+        Flutter: Launch Emulator
+
+Run App
+    $ flutter run
+
+Iniciar o App
+    Na parte inferior do VSCODE
+        >> Na parte nde está escrito "No Device"
+            >> Pressionar em "No Devaice" e 
+                >> Selecionar o Emulador disponível na listas
+    Na parte superiro do VSCODE
+        >> Run 
+            >> Run Without Debugging
+                >> Dart & Flutter
+                    >> Selecionar o Emulador disponível na listas
+
+API
+
+    http://fordevs.herokuapp.com/api-docs/
+
+
+ATENÇÃO
+
+    Não estou usando a variável  => "secret" para referenciar a senha
+    Optei por usar a variável    => "password", por motivo de meu padrão de escrita mesmo
+
+
+SNIPPETS
+
+    Criando snippets personalizados
+
+        Pressionar "files/preferences/user snippets"
+            Escolher "dart"
+
+            Vai estar assim...
+
+                {
+                    // Place your snippets for dart here. Each snippet is defined under a snippet name and has a prefix, body and 
+                    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+                    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+                    // same ids are connected.
+                    // Example:
+                    // "Print to console": {
+                    // 	"prefix": "log",
+                    // 	"body": [
+                    // 		"console.log('$1');",
+                    // 		"$2"
+                    // 	],
+                    // 	"description": "Log output to console"
+                    // }
+                }    
+
+            Deixar assim...
+
+                {
+                    // Place your snippets for dart here. Each snippet is defined under a snippet name and has a prefix, body and 
+                    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+                    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+                    // same ids are connected.
+                    // Example:
+                    // "Print to console": {
+                    // 	"prefix": "log",
+                    // 	"body": [
+                    // 		"console.log('$1');",
+                    // 		"$2"
+                    // 	],
+                    // 	"description": "Log output to console"
+                    // }
+                    "Dart Unite Teste":{
+                        "prefix": "darttest",
+                        "body": [
+                            "import 'package:test/test.dart';",
+                            "",
+                            "void main(){",
+                            "  test('', () {",
+                            "",
+                            "  });",
+                            "}"
+                        ]
+                    }
+                }                         
+
+
+
+CLASS "ClassNameSpy" 
+    Test double captura os valores e mockar resultados
+CLASS "ClassNameStuby" 
+    Test double mockar resultados e não estar preocupado em capturar nada, ou seja, nenhum valor
+CLASS "ClassNameMock" 
+    Test double captura os valores e não estar preocupado em mockar nada, ou seja, nenhum resultado
+
+
+
+ICONS
+    ✅ Ok
+    🔴 Pendente
+
+
+CREDENTIALS MAGUINHO TEST LOGIN IN API
+
+    mango@gmail.com
+    12345
+
+
+GETX
+
+    Na aula
+
+        30. Refatorando para usar o GetX como gerenciador de estado
+        Eu não refatorei o código com essa aula não, vou seguir a recomendação do professor
+
+
+FLUTTER SECURE STORAGE
+
+    Aula
+        31. Criando caso de uso para gravar o token de acesso no cache
+        5:37 / 12:48
+
+            https://pub.dev/packages/flutter_secure_storage
+
+                Abrir o arquivo "C:\projects\flutter\app_fordev_flutter\android\app\build.gradle"
+
+                    Alterar apximadamente a linha 42 "minSdkVersion 16"
+
+                        Deixar assim...
+
+                            minSdkVersion 18
+
+
+
+RESOLUÇÃO PENDENTE
+
+    /*
+    No arquivo "C:\projects\flutter\app_fordev_flutter\lib\presentation\presenters\stream_login_presenter.dart"
+    Na linha "67"
+
+    23. Integrando o StreamLoginPresenter com o Authentication
+    13:00 / 28:53
+
+    O professor disse que vai gravar uma aula extra,
+    explicando porque ao usarmos o "TRY CATCH" apenas 
+    o primeiro estado "_state.isLoading = true;" é apresentado
+    más o segundo estado "_state.isLoading = false;" no final não é apresentado
+    */
+
+    /*
+    No arquivo "C:\projects\flutter\app_fordev_flutter\lib\presentation\presenters\getx_login_presenter.dart"
+    Na linha "58"
+
+    23. Integrando o StreamLoginPresenter com o Authentication
+    13:00 / 28:53
+
+    O professor disse que vai gravar uma aula extra,
+    explicando porque ao usarmos o "TRY CATCH" apenas 
+    o primeiro estado "_state.isLoading = true;" é apresentado
+    más o segundo estado "_state.isLoading = false;" no final não é apresentado
+    */
+
+    
+
+Parei na seguinte aula...
+    34. Integrando o LoginPresenter ao SaveCurrentAccount    
+    34:14 / 35:32 
+    
+    ARESENTANDO ERROS APARTIR DAQUI...
